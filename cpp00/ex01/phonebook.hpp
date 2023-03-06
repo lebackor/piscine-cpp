@@ -3,15 +3,17 @@
 
 #include <string>
 #include <iostream>
+#include <iomanip>
 #include <cctype>
-
 class PhoneBook{
 	public:
-	int repertoire;
+		std::string stock_firstname[10];
+		std::string stock_lastname[10];
+		std::string stock_nickname[10];
+		std::string stock_phonenumber[10];
+		std::string stock_darkestsecret[10];
 		PhoneBook(){
-			repertoire = 0;
-			repertoire += 1;
-			// int number[10];
+
 		}
 		~PhoneBook(){
 
@@ -19,13 +21,12 @@ class PhoneBook{
 };
 
 class Contact{
-	private:
+	public:
 		std::string c_firstname;
 		std::string c_lastname;
 		std::string c_nickname;
 		std::string c_phonenumber;
 		std::string c_darkestsecret;
-	public:
 		void set_firstname()
 		{
 			std::cout << "Enter first name:" << std::endl;
@@ -51,5 +52,6 @@ class Contact{
 			std::cout << "Enter your darkest secret:" << std::endl;
 			std::cin >> c_darkestsecret;
 		}
+
 };
 #endif
