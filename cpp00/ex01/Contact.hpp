@@ -24,6 +24,7 @@
 #include <iomanip>
 #include <cctype>
 #include <cstdlib>
+
 class Contact{
 	private:
 		std::string c_firstname;

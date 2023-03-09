@@ -4,7 +4,7 @@ void Contact::set_firstname()
 {
 	std::cout << GREEN << "Enter first name:" << RESET <<std::endl;
 	std::getline(std::cin, this->c_firstname);
-	while (this->c_firstname.empty() == true && !std::cin.eof())
+	while ((this->c_firstname.empty() == true && !std::cin.eof()) || this->c_firstname[0] == ' ')
 	{
 		std::cout << RED << "Wrong input, retry please:" << RESET << std::endl;
 		std::getline(std::cin, this->c_firstname);

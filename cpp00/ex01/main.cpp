@@ -11,6 +11,8 @@ int main()
 	int count = 1;/// std.empty == true // !std::cin.eof()
 	while (str.compare("EXIT") != 0)
 	{
+		std::cout << BLUE << "Welcome to PhoneBook !" << "☎️" << RESET << std::endl;
+		std::cout << BOLDGREEN << "Choose:	1. ADD	2. SEARCH	3. EXIT" << RESET << std::endl;
 		std::getline(std::cin, str);
 		if (str.compare("ADD") == 0)
 		{
