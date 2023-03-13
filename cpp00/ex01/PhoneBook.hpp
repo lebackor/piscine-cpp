@@ -21,7 +21,6 @@ class PhoneBook{
 		void	add_data_to_contact(int i, Contact contact);
 		void	get_contact_data(int i)const;
 		void	get_all_contact_data(int count)const;
-
 };
 
 

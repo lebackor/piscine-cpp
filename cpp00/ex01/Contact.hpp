@@ -1,6 +1,6 @@
 #ifndef CONTACT_HPP
 #	define CONTACT_HPP
-// #pragma once
+#pragma once
 #define RESET   "\033[0m"
 #define BLACK   "\033[30m"      /* Black */
 #define RED     "\033[31m"      /* Red */
@@ -32,6 +32,8 @@ class Contact{
 		std::string c_nickname;
 		std::string c_phonenumber;
 		std::string c_darkestsecret;
+
+		int	_valid_number();
 	public:
 		void	set_firstname();
 		void	set_lastname();
@@ -45,5 +47,6 @@ class Contact{
 		std::string		get_nickname() const;
 		std::string		get_phonenumber() const;
 		std::string		get_darkestsecret() const;
+
 };
 #endif
