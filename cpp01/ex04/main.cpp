@@ -37,7 +37,7 @@ int main(int ac, char **av)
 	}
 	else
 	{
-		while (true)
+		while (true &&  !infile.eof())
 		{
 			pos = 0;
 			if (i != 0)
@@ -54,7 +54,6 @@ int main(int ac, char **av)
 				tmp.insert(index, av[3]);
 				pos = index + line.length() + strlen(av[3]);
 				line += tmp;
-
 			}
 			i++;
 		}
