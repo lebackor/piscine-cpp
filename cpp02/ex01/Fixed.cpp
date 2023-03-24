@@ -36,3 +36,9 @@ Fixed& Fixed::operator=(const Fixed& ope)
 	this->_Fixedpoint = ope._Fixedpoint;
 	return *this;
 }
+
+std::ostream operator<<(std::ostream& o, const Fixed& fixed)
+{
+	o << fixed.toFloat();
+	return o; 
+}
