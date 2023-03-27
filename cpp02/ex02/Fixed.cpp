@@ -95,7 +95,7 @@ bool Fixed::operator<=(const Fixed& instance)
 	return (this->_Fixedpoint <= instance._Fixedpoint);
 }
 
-Fixed::operator+(const Fixed& instance)
+Fixed Fixed::operator+(const Fixed& instance)
 {
 	Fixed tmp;
 
@@ -103,7 +103,7 @@ Fixed::operator+(const Fixed& instance)
 	return (tmp);
 }
 
-Fixed::operator-(const Fixed& instance)
+Fixed Fixed::operator-(const Fixed& instance)
 {
 	Fixed tmp;
 
@@ -111,7 +111,7 @@ Fixed::operator-(const Fixed& instance)
 	return (tmp);
 }
 
-Fixed::operator*(const Fixed& instance)
+Fixed Fixed::operator*(const Fixed& instance)
 {
 	Fixed tmp;
 
@@ -119,7 +119,7 @@ Fixed::operator*(const Fixed& instance)
 	return (tmp);
 }
 
-Fixed::operator/(const Fixed& instance)
+Fixed Fixed::operator/(const Fixed& instance)
 {
 	Fixed tmp;
 
@@ -127,14 +127,58 @@ Fixed::operator/(const Fixed& instance)
 	return (tmp);
 }
 
-Fixed&::operator++()
+Fixed& Fixed::operator++()
 {
 	this->_Fixedpoint++;
 	return (*this);
 }
 
-Fixed&::operator--()
+Fixed& Fixed::operator--()
 {
 	this->_Fixedpoint--;
 	return (*this);
 }
+
+Fixed Fixed::operator++(int)
+{
+	Fixed tmp = *this;
+	++*this;
+	return (tmp);
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed tmp = *this;
+	--*this;
+	return (tmp);
+}
+
+Fixed& max(Fixed &a, Fixed &b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}
+
+Fixed& min(Fixed &a, Fixed &b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
+
+const Fixed& Fixed::max(const Fixed& a, const Fixed& b)
+{
+	if (a._Fixedpoint > b._Fixedpoint)
+		return (a);
+	return (b);
+
+}
+
+const Fixed& Fixed::min(const Fixed& a, const Fixed& b)
+{
+	if (a._Fixedpoint < b._Fixedpoint)
+		return (a);
+	return (b);
+}
+

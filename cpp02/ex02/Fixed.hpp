@@ -19,18 +19,22 @@ class Fixed{
 	void setRawBits(int const raw);
 	float toFloat(void) const;
 	int toInt(void) const;
+	static Fixed& max(Fixed &a, Fixed &b);
+	static Fixed& min(Fixed &a, Fixed &b);
+	static const Fixed& max(const Fixed &a, const Fixed &b);
+	static const Fixed& min(const Fixed &a, const Fixed &b);
 
 	//Operators
 	Fixed& operator=(const Fixed& ope);
 
 	// Comparaisons operators
 
-	bool Fixed::operator==(const Fixed& instance);
-	bool Fixed::operator!=(const Fixed& instance);
-	bool Fixed::operator<(const Fixed& instance);
-	bool Fixed::operator>(const Fixed& instance);
-	bool Fixed::operator>=(const Fixed& instance);
-	bool Fixed::operator<=(const Fixed& instance);
+	bool operator==(const Fixed& instance);
+	bool operator!=(const Fixed& instance);
+	bool operator<(const Fixed& instance);
+	bool operator>(const Fixed& instance);
+	bool operator>=(const Fixed& instance);
+	bool operator<=(const Fixed& instance);
 
 	// Manipulations operators
 	Fixed operator+(const Fixed& instance);
