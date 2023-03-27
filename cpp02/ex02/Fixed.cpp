@@ -64,3 +64,33 @@ std::ostream& operator<<(std::ostream& o, const Fixed& fixed)
 	o << fixed.toFloat();
 	return o;
 }
+
+bool Fixed::operator==(const Fixed& instance)
+{
+	return (this->_Fixedpoint == instance._Fixedpoint);
+}
+
+bool Fixed::operator!=(const Fixed& instance)
+{
+	return (this->_Fixedpoint != instance._Fixedpoint);
+}
+
+bool Fixed::operator<(const Fixed& instance)
+{
+	return (this->_Fixedpoint < instance._Fixedpoint);
+}
+
+bool Fixed::operator>(const Fixed& instance)
+{
+	return (this->_Fixedpoint > instance._Fixedpoint);
+}
+
+bool Fixed::operator>=(const Fixed& instance)
+{
+	return (this->_Fixedpoint == instance._Fixedpoint);
+}
+
+bool Fixed::operator==(const Fixed& instance)
+{
+	return (this->_Fixedpoint == instance._Fixedpoint);
+}
