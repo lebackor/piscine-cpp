@@ -87,10 +87,54 @@ bool Fixed::operator>(const Fixed& instance)
 
 bool Fixed::operator>=(const Fixed& instance)
 {
-	return (this->_Fixedpoint == instance._Fixedpoint);
+	return (this->_Fixedpoint >= instance._Fixedpoint);
 }
 
-bool Fixed::operator==(const Fixed& instance)
+bool Fixed::operator<=(const Fixed& instance)
 {
-	return (this->_Fixedpoint == instance._Fixedpoint);
+	return (this->_Fixedpoint <= instance._Fixedpoint);
+}
+
+Fixed::operator+(const Fixed& instance)
+{
+	Fixed tmp;
+
+	tmp.setRawBits(this->_Fixedpoint + instance._Fixedpoint);
+	return (tmp);
+}
+
+Fixed::operator-(const Fixed& instance)
+{
+	Fixed tmp;
+
+	tmp.setRawBits(this->_Fixedpoint - instance._Fixedpoint);
+	return (tmp);
+}
+
+Fixed::operator*(const Fixed& instance)
+{
+	Fixed tmp;
+
+	tmp.setRawBits(this->_Fixedpoint * instance._Fixedpoint >> fract);
+	return (tmp);
+}
+
+Fixed::operator/(const Fixed& instance)
+{
+	Fixed tmp;
+
+	tmp.setRawBits(this->_Fixedpoint * (1 << fract) / instance._Fixedpoint);
+	return (tmp);
+}
+
+Fixed&::operator++()
+{
+	this->_Fixedpoint++;
+	return (*this);
+}
+
+Fixed&::operator--()
+{
+	this->_Fixedpoint--;
+	return (*this);
 }
