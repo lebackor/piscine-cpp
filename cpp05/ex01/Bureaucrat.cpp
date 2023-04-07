@@ -5,7 +5,8 @@ Bureaucrat::Bureaucrat() : _name("Carlos Nachos"), _grade(1)
 
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
+Bureaucrat::Bureaucrat(std::string const name, unsigned int grade)
+	: _name(name)
 {
 	if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
@@ -47,4 +48,17 @@ std::ostream& operator<<(std::ostream& o, const Bureaucrat& rhs)
 {
 	o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade();
 	return o;
+}
+
+void Bureaucrat::signForm(Form& form) const
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->_name << " signed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << *this << " cannot sign " << form << " because " << e.what() << std::endl;
+	}
 }

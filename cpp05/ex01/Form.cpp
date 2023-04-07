@@ -42,3 +42,21 @@ bool Form::isSigned() const
 {
 	return this->_isSigned;
 }
+
+void Form::beSigned(const Bureaucrat& candidat)
+{
+	if (!this->_isSigned)
+		if (candidat.getGrade() < this->_gradeSign)
+			this->_isSigned = true;
+		else
+			throw Form::GradeTooLowException();
+	else
+		throw Form::AlreadySignException();
+}
+
+std::ostream& operator<<(std::ostream& o, const Form& rhs)
+{
+	o << "Form " << rhs.getName() << ": ";
+	o << "{signed: " << std::boolalpha << rhs.isSigned() << ", gradeSign: " << rhs.getGradeSign() << ", gradeExec: " << rhs.getGradeExec() << "}";
+	return o;
+}

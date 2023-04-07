@@ -42,6 +42,14 @@ class Form{
 				return ("Grade too low !");
 			}
 	};
+	class AlreadySignException : public std::exception
+	{
+		public:
+			const char* what() const throw()
+			{
+				return ("Form is already sign!");
+			}
+	};
 	private:
 	const std::string _name;
 	const unsigned int _gradeSign;
