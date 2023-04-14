@@ -15,7 +15,7 @@ int main()
 	std::cout << jim << std::endl;
 	std::cout << jane << std::endl;
 
-	Intern intern;
+	Intern *intern = NULL;
 
 	Form* formA;
 	Form* formB;
@@ -25,15 +25,15 @@ int main()
     std::string Chirac = "Chirac";
 	try
 	{
-		formA = intern.makeForm("shrubbery creation", home);
-		formB = intern.makeForm("robotomy request", PLK);
-		formC = intern.makeForm("presidential pardon", Chirac);
+		formA = intern->makeForm("shrubbery creation", home);
+		formB = intern->makeForm("robotomy request", PLK);
+		formC = intern->makeForm("presidential pardon", Chirac);
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	
+
 	std::cout << std::endl;
 	john.executeForm(*formA);
 	jim.executeForm(*formA);

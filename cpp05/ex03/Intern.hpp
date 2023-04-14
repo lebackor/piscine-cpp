@@ -11,7 +11,7 @@ class Form;
 class Intern {
     public:
         Intern();
-        ~Intern();
+        virtual ~Intern();
         Form* makeForm(const std::string& nameform, const std::string& target) const;
 	class NotRecognizedInputException : public std::exception
 	{

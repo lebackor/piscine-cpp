@@ -17,10 +17,7 @@ Form::Form(const Form& other) : _name(other._name), _gradeSign(other._gradeSign)
 Form::Form(std::string name, const unsigned int gradeSign, const unsigned int gradeExec, std::string target) :  _name(name), _gradeSign(gradeSign), _gradeExec(gradeExec), _isSigned(false), _target(target)
 {}
 
-Form::~Form(){
-	delete this;
-}
-
+Form::~Form(){}
 Form& Form::operator=(const Form& rhs)
 {
 	(void) rhs;
@@ -66,7 +63,7 @@ void Form::beSigned(const Bureaucrat& candidat)
 void	Form::execute(Bureaucrat const & executor) const
 {
 	if (!this->_isSigned)
-		throw Form::FormNotSigned();	
+		throw Form::FormNotSigned();
 	if (executor.getGrade() > this->getGradeExec())
 		throw Form::GradeTooLowException();
 }
