@@ -31,3 +31,6 @@ int main(int ac, char **av)
 	Convert convert(str);
 	convert.catch_and_convert();
 }
+
+// 1f.0 doit string or il float
+// f10.0 doit string or il float

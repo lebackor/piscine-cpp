@@ -32,6 +32,8 @@ class Convert{
 		bool content_point(const std::string& s);
 		bool content_letters(const std::string& s);
 		bool content_number(const std::string& s);
+		bool check_if_float(const std::string& s);
+		bool good_float_synthax(const std::string &s);
 	private:
 		std::string _value;
 
