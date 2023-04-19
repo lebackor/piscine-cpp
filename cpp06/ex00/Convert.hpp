@@ -23,19 +23,53 @@
 #include <ctype.h>
 #include <algorithm>
 #include <cctype>
+#include <cstring>
+
 
 class Convert{
 	public:
 		Convert(std::string str);
 		~Convert();
 		void catch_and_convert();
-		bool content_point(const std::string& s);
-		bool content_letters(const std::string& s);
-		bool content_number(const std::string& s);
+		 bool content_point(const std::string& s);
+		 bool content_letters(const std::string& s);
+		 bool content_number(const std::string& s);
 		bool check_if_float(const std::string& s);
 		bool good_float_synthax(const std::string &s);
+		void convert_all(char a);
+		void convert_all(int a);
+		void convert_all(double a);
+		void convert_all(float a);
+	class NonDisplayable : public std::exception
+	{
+	public:
+		const char* what() const throw()
+		{
+			return ("Non displayable");
+		}
+	};
+	class NotAChar : public std::exception
+	{
+	public:
+		const char* what() const throw()
+		{
+			return ("Invalid input ! : string detected, not char");
+		}
+	};
+	class IDKType : public std::exception
+	{
+	public:
+		const char* what() const throw()
+		{
+			return ("Invalid input ! : Cannot recognized at all the type");
+		}
+	};
 	private:
 		std::string _value;
+		int			_intvalue;
+		float		_floatvalue;
+		double		_doublevalue;
+		char		_charvalue;
 
 };
 
