@@ -42,10 +42,6 @@ class Convert{
 		void toFloat();
 		void toDouble();
 		void toChar();
-		// void convert_all(std::string &s);
-		// void convert_all(int a);
-		// void convert_all(double a);
-		// void convert_all(float a);
 	class IDKType : public std::exception
 	{
 	public:
