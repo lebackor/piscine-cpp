@@ -28,9 +28,19 @@ int main(int ac, char **av)
 		std::cout << RED << "NOT ASCII RECOGNIZED" << RESET << std::endl;
 		return (1);
 	}
-	Convert convert(str);
-	convert.catch_and_convert();
-}
+	try
+	{
+		Convert convert(str);
+		convert.catch_and_convert();
+		convert.toFloat();
+		convert.toDouble();
+		convert.toInt();
+		convert.toChar();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 
-// 1f.0 doit string or il float
-// f10.0 doit string or il float
+	
+}

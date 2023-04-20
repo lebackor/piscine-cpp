@@ -1,7 +1,7 @@
 SRCS =	main.cpp\
 		Convert.cpp\
 
-NAME = main
+NAME = convert
 
 CC			=	clang++
 INCLUDES	=	includes
