@@ -116,7 +116,7 @@ bool Convert::good_float_synthax(const std::string &s)
 	int count = 0;
 	while (isdigit(s.c_str()[++i]) != 0){}
 	if ((isdigit(s.c_str()[i]) == 0 && isalpha(s.c_str()[i]) == 0 && i != std::string::npos) || i == 1)
-		return false;	
+		return false;
 	while (isalpha(s.c_str()[i]) != 0)
 	{
 		if (s.c_str()[i] == 'f')
@@ -148,7 +148,7 @@ bool Convert::check_if_float(const std::string& s)
 
 void Convert::catch_and_convert()
 {
-		if ((content_letters(this->_value) == true && content_number(this->_value) == true && content_point(this->_value) == 1 && check_if_float(this->_value) == true) 
+		if ((content_letters(this->_value) == true && content_number(this->_value) == true && content_point(this->_value) == 1 && check_if_float(this->_value) == true)
 			|| this->_value.compare("-inff") == 0 || this->_value.compare("+inff") == 0 || this->_value.compare("nanf") == 0)
 		{
 			std::cout << MAGENTA << "Float recognized" << RESET << std::endl;
@@ -167,7 +167,7 @@ void Convert::catch_and_convert()
 		else if ((content_letters(this->_value) == true || content_number(this->_value) == true) && this->_value.size() == 1)
 		{
 			std::cout << MAGENTA << "Char recognized" << RESET << std::endl;
-		}	
+		}
 		else
 			throw Convert::IDKType();
 }
@@ -186,7 +186,7 @@ bool isInvalidCharacter(const std::string& str, unsigned long i) {
 
 
 int Convert::isstrValid(std::string str, std::string type){
-	if (str.length() == 0){ 
+	if (str.length() == 0){
 		std::cout << "impossible" << std::endl;
     	return (0);}
 for (unsigned long i = 0; str[i]; i++) {
