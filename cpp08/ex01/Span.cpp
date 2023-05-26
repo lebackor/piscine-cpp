@@ -15,5 +15,10 @@ Span& Span::operator=(const Span& rhs)
 		this->_size = rhs._size;
 		this->_v = rhs._v;
 	}
-	return *this;
+	return this;
+}
+
+Span::~Span()
+{
+
 }
