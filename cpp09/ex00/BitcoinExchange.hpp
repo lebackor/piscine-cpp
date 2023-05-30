@@ -6,6 +6,12 @@
 #include <cstdlib>
 #include <fstream>
 #include <string.h>
+#include <regex>
+#include <ctime>
+#include <cmath>
+#include <sstream>
+#include <limits>
+#include <ctime>
 
 class Bitcoin{
 	public:
