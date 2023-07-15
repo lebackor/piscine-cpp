@@ -2,14 +2,14 @@
 
 void print_lower(const std::string& str)
 {
-	for (std::string::const_iterator itr = str.cbegin(); itr != str.cend(); itr++)
+	for (std::string::const_iterator itr = str.begin(); itr != str.end(); itr++)
 		std::cout << (char)tolower(*itr);
 	std::cout << std::endl;
 }
 
 void print_upper(const std::string& str)
 {
-	for (std::string::const_iterator itr = str.cbegin(); itr != str.cend(); itr++)
+	for (std::string::const_iterator itr = str.begin(); itr != str.end(); itr++)
 		std::cout << (char)toupper(*itr);
 	std::cout << std::endl;
 }
