@@ -1,5 +1,5 @@
 SRCS =	main.cpp\
-		Bureaucrat.cpp\
+
 
 NAME = main
 
