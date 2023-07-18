@@ -1,9 +1,7 @@
-SRCS =	PhoneBook.cpp\
-		Contact.cpp\
-		main.cpp\
+SRCS =	main.cpp\
+		Span.cpp
 
-
-NAME = phonebook
+NAME = span
 
 CC = c++
 

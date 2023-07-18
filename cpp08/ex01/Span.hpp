@@ -8,6 +8,7 @@
 
 class Span{
 	public:
+		Span();
 		Span(const unsigned int& N);
 		Span(const Span &rhs);
 
@@ -17,8 +18,8 @@ class Span{
 
 		void addNumber(int nb);
 		void addNumber(const std::vector<int>::iterator& begin, const std::vector<int>::iterator& end);
-		unsigned int shortestSpan(int nb) const;
-		unsigned int longestSpan(int nb) const;
+		unsigned int shortestSpan() ;
+		unsigned int longestSpan() ;
 		class ContainerFull : public std::exception
 		{
 			public:
@@ -36,8 +37,25 @@ class Span{
 					return ("Container Empty !");
 				}
 		};
+		class SpanFull : public std::exception
+		{
+			public:
+				const char* what() const throw()
+				{
+					return ("The span is full");
+				}
+		};		
+		
+		class NotEnoughtNumber : public std::exception
+		{
+			public:
+				const char* what() const throw()
+				{
+					return ("Not enought number in the vector");
+				}
+		};
 
 	private:
-	std::vector<int>	_v;
 	unsigned int 	_size;
+	std::vector<int>	_v;
 };
