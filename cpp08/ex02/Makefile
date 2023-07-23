@@ -1,9 +1,7 @@
-SRCS =	PhoneBook.cpp\
-		Contact.cpp\
-		main.cpp\
+SRCS =		main.cpp\
 
 
-NAME = phonebook
+NAME = mutantstack
 
 CC = c++
 
