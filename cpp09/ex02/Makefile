@@ -1,11 +1,10 @@
 SRCS =	main.cpp\
-		Bureaucrat.cpp\
 
 NAME = main
 
 CC			=	clang++
 INCLUDES	=	includes
-CPPFLAGS	=	-Wall -Werror -Wextra -I$(INCLUDES) -g3
+CPPFLAGS	=	-Wall -Werror -Wextra -I$(INCLUDES) -g3 -std=c++98
 RM			=	rm -rf
 
 OBJS		=	$(SRCS:%.cpp=%.o)
