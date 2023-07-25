@@ -12,7 +12,9 @@
 class PmergeMe{
     public:
     PmergeMe();
+    PmergeMe(const PmergeMe &other);
     ~PmergeMe();
+    PmergeMe& operator=(const PmergeMe &rhs);
     
     private:
 };

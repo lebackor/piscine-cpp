@@ -2,8 +2,20 @@
 unsigned int tmp;
 bool pair = true;
 
-template <typename C1, typename C2, typename C3>
 
+bool isdigit1(char *str) {
+    if (str == NULL)
+        return false;
+    while (*str) {
+        if (!std::isdigit(*str)) {
+            return false;
+        }
+        str++;
+    }
+    return true;
+}
+
+template <typename C1, typename C2, typename C3>
 
 void    algo(int ac, char container, C1 &container1, C2 &container2, C3 &container3) // john algo
 {
@@ -52,11 +64,13 @@ int main(int ac, char **av)
 {
     try
     {
+        if (ac < 2)
+            throw std::runtime_error("No arguments");
         for (int i = 1; i < ac; i++)
         {
             if (std::atoi(av[i]) < 0)
                 throw std::runtime_error("Found an negative number");
-            if (!isdigit(*av[i]))
+            if (!isdigit1(av[i]))
                 throw std::runtime_error("Error, not a number");
             tmp = std::atoi(av[i]);
         }
@@ -78,28 +92,17 @@ int main(int ac, char **av)
                 std::cout << av[i] << " ";
             std::cout << "[...]";      
         }
-
         // Vector
-
         std::vector<std::pair<unsigned int, unsigned int> > vector1;
-
         for (int i = 1; i < ac; i += 2)
-        {
-            if (isdigit(*av[i]))
-                vector1.push_back(std::make_pair(std::atoi(av[i]), std::atoi(av[i + 1])));
-        }
+            vector1.push_back(std::make_pair(std::atoi(av[i]), std::atoi(av[i + 1])));
         std::vector<unsigned int> vector2, vector3;
         algo(ac, 'v', vector1, vector2, vector3);
 
         //Deque
-
         std::deque<std::pair<unsigned int, unsigned int> > deque1;
-        for (int i = 1; i < ac; i += 2)
-        {
-            if (isdigit(*av[i]))  
+        for (int i = 1; i < ac; i += 2) 
                 deque1.push_back(std::make_pair(std::atoi(av[i]), std::atoi(av[i + 1])));
-
-        }
         std::deque<unsigned int> deque2, deque3;
         algo(ac, 'd', deque1, deque2, deque3);
     }
