@@ -1,6 +1,7 @@
 SRCS =	main.cpp\
+		PmergeMe.cpp
 
-NAME = main
+NAME = PmergeMe
 
 CC			=	clang++
 INCLUDES	=	includes
