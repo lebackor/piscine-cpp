@@ -1,7 +1,7 @@
 SRCS =	main.cpp\
 		BitcoinExchange.cpp\
 
-NAME = main
+NAME = btc
 
 CC			=	c++
 INCLUDES	=	includes

@@ -123,9 +123,9 @@ void BitcoinExchange::read_input(std::string file)
     if (input.fail())
     {
         input.close();
-        throw std::runtime_error("Error, can't open the file");
+        throw std::runtime_error("Error, could not open file.");
     }
-
+	std::getline(input, line);
     while (std::getline(input, line))
     {
         std::string date;
@@ -137,10 +137,9 @@ void BitcoinExchange::read_input(std::string file)
         y >> year;
         m >> month;
         d >> day;
-
         if (line.length() < 14)
         {
-            std::cerr << "Invalid Format\n";
+            std::cerr << "Invalid Format" << std::endl;
             continue;
         }
 
@@ -162,7 +161,7 @@ void BitcoinExchange::read_input(std::string file)
 
         if (parse(year, month, day, str_taux, btc, line) == 0)
             print(date, btc);
-    }
+	}
 
     input.close();
 }
