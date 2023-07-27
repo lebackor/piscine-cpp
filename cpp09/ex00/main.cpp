@@ -1,20 +1,21 @@
 #include "BitcoinExchange.hpp"
 
 
-int main()
+int main(int ac, char **av)
 {
-	Bitcoin bitcoin;
-	std::map<std::string, double> _input;
-	std::string tmp;
-	size_t index;
-	std::ifstream input_file("input.txt");
-	std::getline(input_file, tmp);
-	while (!input_file.eof())
-	{
-		index = tmp.find('|');
-		if (index == std::string::npos)
-			break; // throw error
-		_input[tmp.substr(0, index)] = atof(tmp.substr(index + 1, std::string::npos).c_str());
 
+	if (ac != 2)
+		throw std::runtime_error("Error, indicate only one file");
+	
+	try
+	{
+		BitcoinExchange btc;
+		btc.read_csv();
+		btc.read_input(av[1]);
 	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
 }

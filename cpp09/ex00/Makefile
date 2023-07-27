@@ -3,9 +3,9 @@ SRCS =	main.cpp\
 
 NAME = main
 
-CC			=	clang++
+CC			=	c++
 INCLUDES	=	includes
-CPPFLAGS	=	-Wall -Werror -Wextra -I$(INCLUDES) -g3 -std=c++98
+CPPFLAGS	=	-Wall -Werror -Wextra -I$(INCLUDES) -std=c++98 -fsanitize=address -g3
 RM			=	rm -rf
 
 OBJS		=	$(SRCS:%.cpp=%.o)
